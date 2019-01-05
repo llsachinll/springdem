@@ -9,7 +9,8 @@ public class University {
 
     public static void main(String[] args) {
        // ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        ApplicationContext context = new ClassPathXmlApplicationContext("autowire.xml");
+//        ApplicationContext context = new ClassPathXmlApplicationContext("autowire.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("beanDef.xml");
         Student student = (Student) context.getBean("student:name");
         student.getInfo();
 

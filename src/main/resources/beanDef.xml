@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="parentid" class="Teacher" abstract="true">
+        <property name="info3" ref="info3"/>
+    </bean>
+
+    <bean id="student" class="Student" name="student:name">
+        <constructor-arg type="int" value="56" />
+    </bean>
+
+    <bean id="info1" class="Info">
+        <property name="firstName" value="John" />
+        <property name="lastName" value="duglus" />
+        <property name="salary" value="10000" />
+    </bean>
+
+    <bean id = "info2" class="Info">
+        <property name="firstName" value="sachin" />
+        <property name="lastName" value="vasdev" />
+        <property name="salary" value="23456" />
+    </bean>
+
+    <bean id="info3" class="Info">
+        <property name="firstName" value="ashok" />
+        <property name="lastName" value="maharathi" />
+        <property name="salary" value="10000" />
+    </bean>
+
+    <bean id="teacher" class="Teacher" parent="parentid">
+        <property name="info1" ref="info1"/>
+        <property name="info2" ref="info2"/>
+
+    </bean>
+
+    <bean id="teacherList" class="TeacherList">
+        <property name="list">
+            <list>
+                <ref bean="info1"/>
+            </list>
+        </property>
+    </bean>
+
+    <alias name="teacher" alias="teacher-alias"/>
+</beans>
+
+
